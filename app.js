@@ -3,7 +3,7 @@ const formAjout = document.getElementById('formAjout');
 const listTache = document.getElementById('tacheList');
 const addTache = document.getElementById('addTache');
 const tache = document.getElementById('tache');
-const suppTask = document.getElementsByClassName('suppTask')
+const listLi = document.querySelectorAll('li')
 
 
 
@@ -24,14 +24,9 @@ var listdeTAche = [];
 //})
 
 const ajouterTache = () =>{
-    var task = new Task(tache.value)
+    const task = new Task(tache.value,listdeTAche)
     task.ajouterTache(task.title,listdeTAche,listTache)
     console.log(task)
 
-    
-}
-const deleteTache = () =>{
-    task.deleteTache(document.getElementById(task.title),listdeTAche,listTache)
-}
 
-suppTask.addEventListener('onClick',deleteTache())
+}
